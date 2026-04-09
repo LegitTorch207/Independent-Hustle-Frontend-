@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dress Designers</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="./Pictures/icon.png">
+  <link rel="stylesheet" href="./Styles/Index.css">
+</head>
+
+<body>
+  <script defer src="./Scripts/Website.js"></script>
+
+  <div class="themes">
+    <div class="themesdiv">
+      <div class="theme1" onclick="changebgcolor(this)"></div>
+      <div class="theme2" onclick="changebgcolor(this)"></div>
+      <div class="theme3" onclick="changebgcolor(this)"></div>
+    </div>
+  </div>
+
+  <div class="header">
+    <img class="header-img" src="./Pictures/Headerimg.jpg">
+    <div class="d1">
+      <a href="https://www.kayseria.com/" target="_blank">
+        <img class="logo" src="Pictures/icon.png" alt="">
+      </a>
+
+    </div>
+    <div>
+      <ul>
+        <li><a class="navbar-anchors" href="Home.html" target="_blank"><i class="fa-solid fa-house"></i> Home</a>
+        </li>
+        <li><a class="navbar-anchors" href="" target="_blank"><i class="fa-solid fa-globe"></i> About</a></li>
+        <li><a class="navbar-anchors" href="Contact.html" target="_blank"><i class="fa-solid fa-phone"></i>
+            Contact</a></li>
+        <li><a class="navbar-anchors" href="Women.html" target="_blank"><i class="fa-solid fa-venus"></i>
+            Women</a></li>
+        <li><a class="navbar-anchors" href="Men.html" target="_blank"><i class="fa-solid fa-mars"></i>
+            Men</a></li>
+        <li><a class="navbar-anchors" href="Kids.html" target="_blank"><i class="fa-solid fa-child"></i>
+            Kids</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="detail-images-container">
+    <img src="./Pictures/Menimage4.jpeg" onclick="pictureChangeOnClick(this)" alt="">
+    <img src="./Pictures/SherwaniDetail1.jpg" onclick="pictureChangeOnClick(this)" alt="">
+    <img src="./Pictures/SherwaniDetail2.jpeg" onclick="pictureChangeOnClick(this)" alt="">
+  </div>
+
+  <div class="detail-image-big">
+    <img id="imagebox" src="./Pictures/Menimage4.jpeg" alt="">
+  </div>
+
+  <div class="product-details">
+    <p class="product-name"><b>Dress Designers</b></p>
+    <p class="product-price">PKR 1,760</p>
+    <p><span style="color: rgb(92, 92, 92);"><del>PKR 2,992</del> </span> -70%</p>
+  </div>
+
+  <div class="footer">
+    <div class="footer-card1">
+      <p class="footer-headings">TALK TO US</p>
+      <br>
+      <p class="footer-card-texts"><i class="fa-brands fa-whatsapp"></i> WhatsApp: +92 312 2973062 <br>
+        <i class="fa fa-phone" aria-hidden="true"></i> Phone: 042-32118888, <br>
+        <span style="margin-left: 85px;"> 042-38372888 </span><br>
+        <span style="margin-left: 85px;">042-32308888 </span><br>
+        <i class="fa-regular fa-envelope"></i> Email: rashidharoon512@gmail.com
+      </p>
+    </div>
+    <div class="footer-card2">
+
+      <p class="footer-headings">ACCOUNT</p>
+      <br>
+      <p class="footer-card-texts">
+        <a href="">Account Login</a> <br>
+        <a href="">Track Your Order</a>
+      </p>
+    </div>
+    <div class="footer-card3">
+      <p class="footer-headings">SHOPPING GUIDE</p>
+      <br>
+      <p class="footer-card-texts">
+        <a href="">FAQ's</a><br>
+        <a href="Contact.html" target="_blank">Contact Us</a><br>
+        <a href="">Return & Exchange Policy</a><br>
+        <a href="">Order Process</a>
+      </p>
+    </div>
+    <div class="footer-card4">
+      <p class="footer-headings">ABOUT THE BRAND</p>
+      <br>
+      <p class="footer-card-texts">
+        <a href="">Store Locator</a><br>
+        <a href="">History</a><br>
+        <a href="">Gallery</a><br>
+        <a href="">Feedback Form</a><br>
+        <a href="">Complaint Form</a>
+      </p>
+    </div>
+    <div class="footer-card5">
+      <p class="footer-headings">NEWSLETTER SIGN UP</p>
+      <p class="footer-card-texts" style="line-height: 20px;">Sign up for exclusive updates, new arrivals & insider only
+        discounts</p>
+      <input class="footer-signup" type="email" placeholder="enter your email address" required>
+      <button class="footer-submit-button" type="submit">SUBMIT</button>
+    </div>
+    <div class="footer-card6">
+      <p class="footer-icons"><span class="facebook-icon"><a class="footer-facebook-icon-anchor" target="_blank"
+            href="https://www.facebook.com/profile.php?id=100011108944726"><i
+              class="fa-brands fa-facebook"></i></a></span>
+        <span class="instagram-icon"><a class="footer-instagram-icon-anchor" target="_blank"
+            href="https://www.instagram.com/_haroonrashid_/?igsh=MXdncWN3NTlmaDQ5dw%3D%3D"><i
+              class="fa-brands fa-instagram"></i></a></span>
+        <span class="youtube-icon"><a class="footer-youtube-icon-anchor" target="_blank"
+            href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><i class="fa-brands fa-youtube"></i></a></span>
+      </p>
+    </div>
+
+  </div>
+
+  <button id="topbutton" onclick="topfunction()"><i class="fa-solid fa-arrow-up"></i> Back To Top</button>
+
+</body>
+
+</html>
