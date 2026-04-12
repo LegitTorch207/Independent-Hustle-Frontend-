@@ -369,7 +369,6 @@ button {
   margin-top: 25px;
   padding: 0px 5px 0px 5px;
   margin-left: 10px;
-  /* background-color: wheat; */
 }
 
 .footer-card6 {
@@ -379,7 +378,6 @@ button {
   margin-top: 25px;
   padding: 0px 5px 0px 5px;
   margin-left: 10px;
-  /* background-color: wheat; */
   font-size: 30px;
 }
 
@@ -486,7 +484,6 @@ button {
 .submit-form {
   height: 750px;
   width: 500px;
-  /* background-color: black; */
   margin-top: 100px;
   float: right;
 }
@@ -546,7 +543,6 @@ label {
 .contactus {
   height: 600px;
   width: 680px;
-  /* background-color: wheat; */
   margin-top: 100px;
   float: left;
 }
@@ -672,6 +668,7 @@ label {
   height: 300px;
   width: 100%;
 }
+
 .product-page-card-container-carddetails {
   float: left;
   height: 100px;
@@ -710,7 +707,6 @@ label {
   float: left;
   height: 400px;
   width: 240px;
-  /* background-color: wheat; */
 }
 
 .detail-images-container img {
@@ -731,21 +727,18 @@ label {
 .detail-image-big {
   height: 405px;
   width: 325px;
-  /* background-color: black; */
   margin-top: 120px;
   float: left;
 }
 
 .detail-image-big img {
   height: 400px;
-  /* width: 600px; */
   border: 2px solid black;
 }
 
 .product-details {
   height: 405px;
   width: 600px;
-  /* background-color: wheat; */
   float: right;
   margin-top: 120px;
 }
@@ -763,3 +756,551 @@ label {
 }
 
 /* Detail Pages End */
+
+
+/* =============================================
+   RESPONSIVE STYLES — DO NOT EDIT ABOVE THIS
+   ============================================= */
+
+/* Prevent any element from causing horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* --- Tablet (max-width: 768px) --- */
+@media (max-width: 768px) {
+
+  /* Header: become a flex column so logo + nav stack naturally */
+  .header {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 2;
+  }
+
+  /* Header background image fills the whole header */
+  .header-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  /* d1 (logo wrapper) and nav div sit above the background image */
+  .header>div {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Logo row */
+  .header .d1 {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+  }
+
+  .logo {
+    height: 50px;
+    position: static;
+    float: none;
+  }
+
+  /* Nav row */
+  ul {
+    position: static;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 4px 8px 8px 8px;
+    margin: 0;
+  }
+
+  ul li {
+    font-size: 14px;
+    margin: 4px 8px;
+  }
+
+  /* ── FIX 1: Theme switcher ──────────────────────────────
+     On desktop each dot has margin-left:20px which works fine.
+     On mobile 10vw is too narrow to hold 3 dots. Switch the box to
+     flexbox with a fixed px width, and override the float/margin on
+     each dot so they stay contained. */
+  .themes {
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .themesdiv {
+    pointer-events: all;
+    position: fixed;
+    top: 6px;
+    left: auto;
+    right: 0;
+    width: 90px;
+    height: 28px;
+    z-index: 3;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 0 4px;
+    box-sizing: border-box;
+  }
+
+  /* Override float + individual margins — flex gap handles spacing */
+  .theme1,
+  .theme2,
+  .theme3 {
+    float: none;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  /* Video: push down enough for the taller stacked header (~110px) */
+  #video {
+    margin-top: 110px;
+  }
+
+  /* Banner — prevent 250px discount text from overflowing */
+  .banner {
+    height: auto;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .text1 {
+    font-size: 30px;
+    line-height: 50px;
+  }
+
+  .text2 {
+    font-size: 40px;
+  }
+
+  /* ── FIX 3 (overflow): scale discount text to viewport */
+  .discount {
+    font-size: clamp(60px, 25vw, 160px);
+    line-height: 1;
+  }
+
+  .stores {
+    font-size: 20px;
+    width: auto;
+    max-width: 90%;
+    margin: 10px auto;
+  }
+
+  /* ── FIX 2: Home cards ──────────────────────────────────
+     .img1/.img2/.img3 are <img> elements with background-image set
+     via CSS. They were floated with fixed left margins that pushed
+     them off-screen on mobile. Switch .cards to flex and reset the
+     image elements to block-level so background-image renders. */
+  .cards {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 10px;
+    margin-top: 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .img1,
+  .img2,
+  .img3 {
+    float: none;
+    display: block;
+    /* <img> needs explicit block/flex child to honour width/height */
+    margin-left: 0;
+    width: 140px;
+    height: 140px;
+    flex-shrink: 0;
+  }
+
+  /* Buy buttons */
+  .buybuttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .buybutton1,
+  .buybutton2,
+  .buybutton3 {
+    margin-left: 0;
+  }
+
+  button {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  /* ── FIX 3 (overflow): Footer ───────────────────────────
+     Fixed pixel widths (330px, 270px, 800px…) on footer cards
+     were wider than mobile viewport, causing horizontal scroll.
+     Stack them all vertically and make them full-width. */
+  .footer {
+    height: auto;
+    float: none;
+    padding-bottom: 30px;
+    overflow: hidden;
+  }
+
+  .footer-card1,
+  .footer-card2,
+  .footer-card3,
+  .footer-card4,
+  .footer-card5,
+  .footer-card6 {
+    float: none;
+    width: 90%;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto 0;
+    box-sizing: border-box;
+  }
+
+  .footer-signup {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    display: block;
+  }
+
+  .footer-submit-button {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+    display: block;
+  }
+
+  .footer-facebook-icon-anchor {
+    margin-left: 10px;
+  }
+
+  .footer-instagram-icon-anchor,
+  .footer-youtube-icon-anchor {
+    margin-left: 16px;
+  }
+
+  /* Contact page */
+  .contact-banner {
+    height: 180px;
+    margin-top: 110px;
+  }
+
+  .contact-bannertext {
+    font-size: 32px;
+    margin-top: 60px;
+    margin-left: 30px;
+  }
+
+  .submit-form {
+    float: none;
+    width: 90%;
+    margin: 40px auto 0;
+    height: auto;
+  }
+
+  .forminput,
+  .Message {
+    padding-right: 20px;
+    padding-left: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contactus {
+    float: none;
+    width: 90%;
+    height: auto;
+    margin: 30px auto 0;
+  }
+
+  .contactus-heading {
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+
+  .contactus-text {
+    margin-left: 20px;
+  }
+
+  .submit-formheading {
+    font-size: 28px;
+  }
+
+  /* Product pages */
+  .men-page-banner,
+  .women-page-banner {
+    height: 250px;
+    margin-top: 110px;
+  }
+
+  .product-page-banner-sale {
+    margin-top: 140px;
+    width: 220px;
+  }
+
+  .product-page-banner-sale-text,
+  .product-page-banner-discount,
+  .product-page-banner-shopnow {
+    font-size: 18px;
+  }
+
+  .product-page-body-deals {
+    width: 90%;
+    height: auto;
+  }
+
+  .product-page-body-text {
+    font-size: 26px;
+  }
+
+  .product-page-card-container {
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  /* Women/Men/Kids pages wrap each card in an <a> tag — that <a> is
+     the direct flex child, so it must be block-level and sized, not
+     the inner div. Without this the flex layout collapses. */
+  .product-page-card-container>a {
+    display: block;
+    width: calc(50% - 30px);
+    min-width: 200px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .product-page-card-container-cards {
+    float: none;
+    margin-left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .product-page-card-container-cards img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .product-page-card-container-carddetails {
+    float: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .product-page-card-line {
+    position: static;
+    display: block;
+    margin: 5px auto;
+  }
+
+  /* Detail pages */
+  .detail-images-container {
+    float: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin-top: 120px;
+    padding-left: 10px;
+    gap: 8px;
+  }
+
+  .detail-images-container img {
+    margin-left: 0;
+    width: 64px;
+    display: inline-block;
+  }
+
+  .detail-image-big {
+    float: none;
+    width: 90%;
+    margin: 20px auto 0;
+    height: auto;
+  }
+
+  .detail-image-big img {
+    width: 100%;
+    height: auto;
+  }
+
+  .product-details {
+    float: none;
+    width: 90%;
+    margin: 20px auto 40px;
+    height: auto;
+  }
+
+  .product-name {
+    margin-top: 20px;
+  }
+
+  .product-price {
+    margin-top: 20px;
+  }
+}
+
+/* --- Mobile (max-width: 480px) --- */
+@media (max-width: 480px) {
+
+  /* Logo slightly smaller */
+  .logo {
+    height: 42px;
+  }
+
+  ul li {
+    font-size: 12px;
+    margin: 3px 5px;
+  }
+
+  /* Video */
+  #video {
+    margin-top: 120px;
+  }
+
+  /* Banner */
+  .text1 {
+    font-size: 20px;
+    line-height: 36px;
+  }
+
+  .text2 {
+    font-size: 28px;
+  }
+
+  .discount {
+    font-size: clamp(48px, 22vw, 90px);
+  }
+
+  .stores {
+    font-size: 16px;
+  }
+
+  /* Cards: single column on small phones */
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img1,
+  .img2,
+  .img3 {
+    width: 75vw;
+    max-width: 260px;
+    height: 160px;
+  }
+
+  /* Buy buttons */
+  .buybuttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  button {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 75vw;
+    max-width: 260px;
+  }
+
+  /* Footer social icons */
+  .footer-facebook-icon-anchor,
+  .footer-instagram-icon-anchor,
+  .footer-youtube-icon-anchor {
+    font-size: 36px;
+    margin-left: 12px;
+  }
+
+  /* Contact */
+  .contact-banner {
+    height: 140px;
+    margin-top: 120px;
+  }
+
+  .contact-bannertext {
+    font-size: 24px;
+    margin-top: 40px;
+    margin-left: 16px;
+  }
+
+  .submit-formheading {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+
+  /* Product pages */
+  .men-page-banner,
+  .women-page-banner {
+    height: 180px;
+    margin-top: 120px;
+  }
+
+  .product-page-banner-sale {
+    margin-top: 90px;
+    width: 180px;
+  }
+
+  .product-page-body-text {
+    font-size: 20px;
+  }
+
+  .product-page-card-container>a {
+    width: 85%;
+    min-width: 0;
+  }
+
+  .product-page-card-container-cards {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-page-card-container-cards img {
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Detail pages */
+  .detail-images-container {
+    margin-top: 120px;
+  }
+
+  .product-name {
+    font-size: 22px;
+  }
+
+  .product-price {
+    font-size: 20px;
+  }
+}
